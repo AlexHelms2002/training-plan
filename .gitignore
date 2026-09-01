@@ -1,0 +1,16 @@
+# Training data never belongs in the repo — only the code does.
+*.json
+!package.json
+data/
+backups/
+exports/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Just in case
+node_modules/

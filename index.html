@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Road to March — Marathon Tracker</title>
+  <meta name="description" content="Local marathon + gym training tracker. Plan by week, log by day, get told what's left.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏃</text></svg>">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="brand">
+      <h1>Road to March</h1>
+      <p id="header-sub">Loading…</p>
+    </div>
+    <div class="header-stats" id="header-stats"></div>
+    <div class="header-actions">
+      <button id="btn-export" class="btn ghost" title="Download a JSON backup of everything">Export</button>
+      <button id="btn-import" class="btn ghost" title="Load a backup file">Import</button>
+      <input type="file" id="file-import" accept="application/json,.json" hidden>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button class="tab" data-tab="week" role="tab" aria-selected="true">This Week</button>
+    <button class="tab" data-tab="plan" role="tab" aria-selected="false">Plan</button>
+    <button class="tab" data-tab="log"  role="tab" aria-selected="false">Log</button>
+    <button class="tab" data-tab="insights" role="tab" aria-selected="false">Insights</button>
+  </nav>
+
+  <main>
+    <section id="tab-week" class="tab-panel" role="tabpanel" aria-label="This week"></section>
+    <section id="tab-plan" class="tab-panel" role="tabpanel" aria-label="Plan" hidden></section>
+    <section id="tab-log"  class="tab-panel" role="tabpanel" aria-label="Log" hidden></section>
+    <section id="tab-insights" class="tab-panel" role="tabpanel" aria-label="Insights" hidden></section>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <!-- Plain scripts, no build step, no bundler: open index.html and it runs. -->
+  <script src="js/plan-data.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/week.js"></script>
+  <script src="js/gym.js"></script>
+  <script src="js/plan.js"></script>
+  <script src="js/log.js"></script>
+  <script src="js/suggest.js"></script>
+  <script src="js/insights.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
